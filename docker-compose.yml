@@ -1,0 +1,12 @@
+services:
+  ros: # Service name
+    image: ros_image_name # Image name
+    container_name: ros_turtle_checkers # Container name
+    pull_policy: never # Do not pull in case someone else is using the same name as you
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DISPLAY=host.docker.internal:0.0 # Required to use any GUI components
+    volumes:
+      - <Your local folder>:/catkin_ws/ # Maps a folder on your harddrive to one within the container
