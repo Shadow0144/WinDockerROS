@@ -1,7 +1,8 @@
 services:
   ros: # Service name
-    image: ros_image_name # Image name
+    image: ros2_turtle_checkers_image # Image name
     container_name: ros_turtle_checkers # Container name
+    tty: true
     pull_policy: never # Do not pull in case someone else is using the same name as you
     build:
       context: .
